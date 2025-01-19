@@ -40,51 +40,43 @@
     <widget class="QWidget" name="widget_2" native="true">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>30</y>
-       <width>501</width>
-       <height>451</height>
+       <x>120</x>
+       <y>10</y>
+       <width>591</width>
+       <height>481</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: transparent</string>
      </property>
-     <widget class="QLabel" name="label">
+     <widget class="QLineEdit" name="lineEdit_3">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>100</y>
-        <width>391</width>
-        <height>81</height>
+        <x>160</x>
+        <y>190</y>
+        <width>261</width>
+        <height>41</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <family>Sans Serif Collection</family>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>false</bold>
-        <kerning>true</kerning>
-       </font>
-      </property>
       <property name="styleSheet">
-       <string notr="true">border:none;
-font: 16pt &quot;Sans Serif Collection&quot;;
-background-color:#e0f7ff;
-background:none;</string>
+       <string notr="true">background-color: #f9f9f9;
+border-radius:18px;
+font-size: 14px;
+color: #333;
+</string>
       </property>
       <property name="text">
-       <string>                SIGN IN WITH EMAIL</string>
+       <string/>
       </property>
-      <property name="scaledContents">
-       <bool>true</bool>
+      <property name="placeholderText">
+       <string>Name</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>190</y>
+        <x>160</x>
+        <y>240</y>
         <width>261</width>
         <height>41</height>
        </rect>
@@ -106,8 +98,8 @@ background:none;</string>
      <widget class="QLineEdit" name="lineEdit_2">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>260</y>
+        <x>160</x>
+        <y>290</y>
         <width>261</width>
         <height>41</height>
        </rect>
@@ -117,7 +109,7 @@ background:none;</string>
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 18px;
- 
+
     font-size: 14px;
     color: #333;
 </string>
@@ -126,32 +118,12 @@ background:none;</string>
        <string>Password</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>350</y>
-        <width>261</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:#000000;
-font: 12pt &quot;Times New Roman&quot;;
-color:#ffffff;
-border-radius: 24px;
-</string>
-      </property>
-      <property name="text">
-       <string>SIGN IN</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>310</y>
-        <width>111</width>
+        <x>230</x>
+        <y>330</y>
+        <width>191</width>
         <height>41</height>
        </rect>
       </property>
@@ -162,23 +134,74 @@ border-radius: 24px;
        <string notr="true">font: 8pt &quot;Segoe UI&quot;;
 border: none;
 background-color: #ffffff;
-background:none;</string>
+background: none;</string>
       </property>
       <property name="text">
-       <string>forgot password?</string>
+       <string>Already have an account? Sign In</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_4">
+     <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>210</x>
-        <y>40</y>
+        <x>160</x>
+        <y>370</y>
+        <width>261</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:#000000;
+font: 12pt &quot;Times New Roman&quot;;
+color:#ffffff;
+border-radius:24px;</string>
+      </property>
+      <property name="text">
+       <string>SIGN UP</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>100</y>
+        <width>391</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+font: 16pt &quot;Segoe UI&quot;;
+background-color:#e0f7ff;
+background:none;
+</string>
+      </property>
+      <property name="text">
+       <string>              SIGN UP WITH EMAIL</string>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>30</y>
         <width>71</width>
         <height>71</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background:none;</string>
+       <string notr="true">background:none</string>
       </property>
       <property name="text">
        <string/>
@@ -190,6 +213,13 @@ background:none;</string>
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>lineEdit</zorder>
+     <zorder>lineEdit_2</zorder>
+     <zorder>pushButton</zorder>
+     <zorder>pushButton_2</zorder>
+     <zorder>label</zorder>
+     <zorder>label_5</zorder>
+     <zorder>lineEdit_3</zorder>
     </widget>
    </widget>
   </widget>
