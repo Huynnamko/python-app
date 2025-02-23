@@ -190,6 +190,32 @@ background:none;</string>
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>260</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../img/eye_close-removebg-preview.png</normaloff>../img/eye_close-removebg-preview.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>24</width>
+        <height>24</height>
+       </size>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
