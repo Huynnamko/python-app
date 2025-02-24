@@ -3,8 +3,7 @@ from PyQt6.QtWidgets import *
 from PyQt6.QtGui import *
 from PyQt6.QtCore import *
 from PyQt6 import uic
-import sys
-from setup_db import *
+from database import *
 
 class MessageBox():
     def success_box(self, message):
@@ -96,7 +95,7 @@ class Register(QMainWindow):
         self.btn_eye_p.clicked.connect(lambda: self.hiddenOrShow(self.password, self.btn_eye_p))
         self.btn_eye_cp.clicked.connect(lambda: self.hiddenOrShow(self.confirm_password, self.btn_eye_cp))
 
-        def hiddenOrShow(self, input:QLineEdit, button:QPushButton):
+    def hiddenOrShow(self, input:QLineEdit, button:QPushButton):
         if input.echoMode() == QLineEdit.EchoMode.Password:
             input.setEchoMode(QLineEdit.EchoMode.Normal)
             button.setIcon(QIcon("img/eye-solid.svg"))
@@ -161,3 +160,16 @@ class Register(QMainWindow):
         self.login= Login()
         self.login.show()
         self.close()
+
+class Home(QMainWindow):
+    def __init__(self, user_id):
+        super().__init__()
+        uic.loadUi("ui/home.ui", self)
+
+        self.user_id = user_id
+
+if __name__ == "__main__":
+    app = QApplication([])
+    login = Login()
+    login.show()
+    app.exec()  
