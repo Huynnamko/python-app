@@ -27,7 +27,7 @@
       <x>0</x>
       <y>0</y>
       <width>801</width>
-      <height>511</height>
+      <height>601</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -40,10 +40,10 @@
     <widget class="QWidget" name="widget_2" native="true">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>10</y>
-       <width>591</width>
-       <height>481</height>
+       <x>110</x>
+       <y>40</y>
+       <width>571</width>
+       <height>521</height>
       </rect>
      </property>
      <property name="styleSheet">

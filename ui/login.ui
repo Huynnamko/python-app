@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>796</width>
     <height>600</height>
    </rect>
   </property>
@@ -27,7 +27,7 @@
       <x>0</x>
       <y>0</y>
       <width>801</width>
-      <height>511</height>
+      <height>601</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -40,10 +40,10 @@
     <widget class="QWidget" name="widget_2" native="true">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>30</y>
+       <x>150</x>
+       <y>50</y>
        <width>501</width>
-       <height>451</height>
+       <height>501</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -130,7 +130,7 @@ background:none;</string>
       <property name="geometry">
        <rect>
         <x>120</x>
-        <y>350</y>
+        <y>380</y>
         <width>261</width>
         <height>51</height>
        </rect>
@@ -216,6 +216,36 @@ background:none;</string>
        </size>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>340</y>
+        <width>191</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 8pt &quot;Segoe UI&quot;;
+border: none;
+background-color: #ffffff;
+background: none;</string>
+      </property>
+      <property name="text">
+       <string>Don't have an account? Sign Up</string>
+      </property>
+     </widget>
+     <zorder>lineEdit</zorder>
+     <zorder>lineEdit_2</zorder>
+     <zorder>pushButton_2</zorder>
+     <zorder>pushButton</zorder>
+     <zorder>label_4</zorder>
+     <zorder>pushButton_3</zorder>
+     <zorder>pushButton_4</zorder>
+     <zorder>label</zorder>
     </widget>
    </widget>
   </widget>
