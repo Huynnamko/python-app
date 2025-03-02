@@ -17,9 +17,9 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>40</x>
       <y>0</y>
-      <width>801</width>
+      <width>761</width>
       <height>581</height>
      </rect>
     </property>
@@ -27,41 +27,1514 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
-     <widget class="QLabel" name="label_10">
+     <widget class="QWidget" name="widget_2" native="true">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>30</y>
-        <width>51</width>
-        <height>21</height>
+        <x>10</x>
+        <y>10</y>
+        <width>711</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <widget class="QLineEdit" name="lineEdit_7">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>10</y>
+         <width>421</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">    /* Gradient từ góc trên/trái sang dưới/phải */
+    background: qlineargradient(
+        spread:pad,
+        x1:0, y1:0,
+        x2:1, y2:1,
+        /* Bạn có thể chỉnh lại giá trị RGBA để khớp màu hơn */
+        stop:0 rgba(26, 31, 69, 255),  /* Xanh tím than nhạt hơn */
+        stop:1 rgba(20, 24, 60, 255)   /* Xanh tím than đậm hơn */
+    );
+
+    color: #FFFFFF;                          /* Màu chữ trắng */
+    font-size: 14px;                         /* Cỡ chữ */
+    padding: 6px 12px;                       /* Khoảng cách bên trong */
+    border: 1px solid rgba(255, 255, 255, 40); /* Viền trắng mờ */
+    border-radius: 8px;                      /* Bo góc nhẹ (chỉnh tùy ý) */
+}
+
+QLineEdit::placeholder {
+    color: rgba(255, 255, 255, 80);  /* Màu placeholder trắng mờ */
+}
+
+QLineEdit:focus {
+    /* Khi focus, viền xanh để nổi bật hơn */
+    border: 1px solid rgba(50, 150, 255, 255);
+
+    /* Có thể làm sáng nhẹ khi focus */
+    background: qlineargradient(
+        spread:pad,
+        x1:0, y1:0,
+        x2:1, y2:1,
+        stop:0 rgba(36, 41, 79, 255),
+        stop:1 rgba(30, 34, 70, 255)
+    );</string>
+       </property>
+       <property name="placeholderText">
+        <string>Search here</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_66">
+       <property name="geometry">
+        <rect>
+         <x>530</x>
+         <y>10</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/magnifying_glass_icon-removebg-preview.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_67">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>49</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/map_icon-removebg-preview.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_68">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>10</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255)</string>
+       </property>
+       <property name="text">
+        <string>London,UK</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_18">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>10</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../img/bell_icon-removebg-preview.png</normaloff>../img/bell_icon-removebg-preview.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_19">
+       <property name="geometry">
+        <rect>
+         <x>630</x>
+         <y>10</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../img/calendar_icon-removebg-preview.png</normaloff>../img/calendar_icon-removebg-preview.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QFrame" name="frame_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>711</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">    background: qlineargradient(
+        spread:pad,
+        x1:0, y1:0,
+        x2:0, y2:1,
+        stop:0 rgba(30, 35, 85, 200),   /* Màu xanh tím nhạt hơn, alpha 200 (hơi trong suốt) */
+        stop:1 rgba(18, 22, 50, 200)    /* Màu xanh tím đậm hơn, alpha 200 */
+    );
+    border: 1px solid rgba(255, 255, 255, 20);
+    border-radius: 8px;
+    padding: 8px;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+      </widget>
+      <zorder>frame_4</zorder>
+      <zorder>lineEdit_7</zorder>
+      <zorder>label_66</zorder>
+      <zorder>label_67</zorder>
+      <zorder>label_68</zorder>
+      <zorder>pushButton_18</zorder>
+      <zorder>pushButton_19</zorder>
+     </widget>
+     <widget class="QWidget" name="widget_3" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>451</width>
+        <height>171</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+       <string notr="true"/>
       </property>
-      <property name="text">
-       <string>Multan</string>
-      </property>
+      <widget class="QLabel" name="label_29">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>10</y>
+         <width>101</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/cloud.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_30">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>120</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255)</string>
+       </property>
+       <property name="text">
+        <string>London, UK</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_31">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>140</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255)</string>
+       </property>
+       <property name="text">
+        <string>Partly Cloud</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_32">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>120</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 20pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255)</string>
+       </property>
+       <property name="text">
+        <string>28°</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_9">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>10</y>
+         <width>101</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_38">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>20</y>
+         <width>41</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/cloudy (1).png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_37">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>30</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 15pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>16°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>20</y>
+         <width>41</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/cloudy.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_10">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>10</y>
+         <width>101</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_36">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>30</y>
+         <width>31</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 15pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>14°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_34">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>70</y>
+         <width>49</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Saturday</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_35">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>90</y>
+         <width>41</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(116, 116, 116);
+</string>
+       </property>
+       <property name="text">
+        <string>sun</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_39">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>70</y>
+         <width>49</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Sunday</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_40">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>90</y>
+         <width>41</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(116, 116, 116);
+</string>
+       </property>
+       <property name="text">
+        <string>sun</string>
+       </property>
+      </widget>
+      <widget class="QFrame" name="frame_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>451</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">    background: qlineargradient(
+        spread:pad,
+        x1:0, y1:0,
+        x2:0, y2:1,
+        stop:0 rgba(30, 35, 85, 200),   /* Màu xanh tím nhạt hơn, alpha 200 (hơi trong suốt) */
+        stop:1 rgba(18, 22, 50, 200)    /* Màu xanh tím đậm hơn, alpha 200 */
+    );
+    border: 1px solid rgba(255, 255, 255, 20);
+    border-radius: 8px;
+    padding: 8px;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+      </widget>
+      <zorder>frame_2</zorder>
+      <zorder>pushButton_10</zorder>
+      <zorder>label_29</zorder>
+      <zorder>label_30</zorder>
+      <zorder>label_31</zorder>
+      <zorder>label_32</zorder>
+      <zorder>pushButton_9</zorder>
+      <zorder>label_38</zorder>
+      <zorder>label_37</zorder>
+      <zorder>label_33</zorder>
+      <zorder>label_36</zorder>
+      <zorder>label_34</zorder>
+      <zorder>label_35</zorder>
+      <zorder>label_39</zorder>
+      <zorder>label_40</zorder>
      </widget>
-     <widget class="QLabel" name="label_11">
+     <widget class="QWidget" name="widget_4" native="true">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>30</y>
-        <width>81</width>
-        <height>21</height>
+        <x>10</x>
+        <y>290</y>
+        <width>451</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <widget class="QLabel" name="label_41">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 11pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255)</string>
+       </property>
+       <property name="text">
+        <string>Today's Highlights</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>131</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_12">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>40</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_13">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>40</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_14">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>110</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_15">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>110</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_17">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>131</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_42">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>50</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/cloud.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_43">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>50</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/heavy-rain.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_44">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>120</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/humidity.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_45">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>120</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/ultraviolet.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_46">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>120</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/cloudy.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_47">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>50</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/compass.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_48">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>70</y>
+         <width>49</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(116, 116, 116);
+</string>
+       </property>
+       <property name="text">
+        <string>Normal</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_49">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>50</y>
+         <width>49</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Feel Like</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_50">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>40</y>
+         <width>21</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 11pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>7°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_51">
+       <property name="geometry">
+        <rect>
+         <x>58</x>
+         <y>120</y>
+         <width>61</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Humidity</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_52">
+       <property name="geometry">
+        <rect>
+         <x>58</x>
+         <y>140</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(116, 116, 116);
+</string>
+       </property>
+       <property name="text">
+        <string>Heavy</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_53">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>50</y>
+         <width>49</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Cloud</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_55">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>120</y>
+         <width>61</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ultraviolet</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_56">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>70</y>
+         <width>49</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(116, 116, 116);
+</string>
+       </property>
+       <property name="text">
+        <string>Heave</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_57">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>140</y>
+         <width>49</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(116, 116, 116);
+</string>
+       </property>
+       <property name="text">
+        <string>Heavy</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_58">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>50</y>
+         <width>41</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Rain</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_59">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>70</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(116, 116, 116);
+</string>
+       </property>
+       <property name="text">
+        <string>Normal</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_60">
+       <property name="geometry">
+        <rect>
+         <x>348</x>
+         <y>120</y>
+         <width>41</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Cloudy</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_61">
+       <property name="geometry">
+        <rect>
+         <x>348</x>
+         <y>140</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(116, 116, 116);
+</string>
+       </property>
+       <property name="text">
+        <string>Normal</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_54">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>110</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 11pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>65°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_62">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>40</y>
+         <width>31</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 11pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>18°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_63">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>110</y>
+         <width>21</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 11pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>7°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_64">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>40</y>
+         <width>21</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 11pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>2°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_65">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>110</y>
+         <width>41</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 11pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>26
+km/h</string>
+       </property>
+      </widget>
+      <widget class="QFrame" name="frame_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>451</width>
+         <height>181</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">    background: qlineargradient(
+        spread:pad,
+        x1:0, y1:0,
+        x2:0, y2:1,
+        stop:0 rgba(30, 35, 85, 200),   /* Màu xanh tím nhạt hơn, alpha 200 (hơi trong suốt) */
+        stop:1 rgba(18, 22, 50, 200)    /* Màu xanh tím đậm hơn, alpha 200 */
+    );
+    border: 1px solid rgba(255, 255, 255, 20);
+    border-radius: 8px;
+    padding: 8px;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+      </widget>
+      <zorder>frame_3</zorder>
+      <zorder>label_41</zorder>
+      <zorder>pushButton_11</zorder>
+      <zorder>pushButton_12</zorder>
+      <zorder>pushButton_13</zorder>
+      <zorder>pushButton_14</zorder>
+      <zorder>pushButton_15</zorder>
+      <zorder>pushButton_17</zorder>
+      <zorder>label_42</zorder>
+      <zorder>label_43</zorder>
+      <zorder>label_44</zorder>
+      <zorder>label_45</zorder>
+      <zorder>label_46</zorder>
+      <zorder>label_47</zorder>
+      <zorder>label_48</zorder>
+      <zorder>label_49</zorder>
+      <zorder>label_50</zorder>
+      <zorder>label_51</zorder>
+      <zorder>label_52</zorder>
+      <zorder>label_53</zorder>
+      <zorder>label_55</zorder>
+      <zorder>label_56</zorder>
+      <zorder>label_57</zorder>
+      <zorder>label_58</zorder>
+      <zorder>label_59</zorder>
+      <zorder>label_60</zorder>
+      <zorder>label_61</zorder>
+      <zorder>label_54</zorder>
+      <zorder>label_62</zorder>
+      <zorder>label_63</zorder>
+      <zorder>label_64</zorder>
+      <zorder>label_65</zorder>
+     </widget>
+     <widget class="QWidget" name="widget_5" native="true">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>80</y>
+        <width>271</width>
+        <height>391</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+       <string notr="true"/>
       </property>
-      <property name="text">
-       <string>21.04.2021</string>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 20pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255)</string>
+       </property>
+       <property name="text">
+        <string>Other Cities</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>251</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>251</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>343</y>
+         <width>251</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">    background-color: qlineargradient(
+        spread:pad, x1:0, y1:0, x2:1, y2:1,
+        stop:0 rgba(30, 144, 255, 255),  /* Màu xanh sáng */
+        stop:1 rgba(0, 102, 204, 255)   /* Màu xanh đậm */
+    );
+    color: white; 
+    border-radius: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;</string>
+       </property>
+       <property name="text">
+        <string>See More</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>260</y>
+         <width>251</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>190</y>
+         <width>251</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>130</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/heavy-rain.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>200</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/heavy-rain.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>270</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/cloud.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>60</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/cloud.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>60</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Manchester</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>80</y>
+         <width>141</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(116, 116, 116);
+</string>
+       </property>
+       <property name="text">
+        <string>Cloudy. High: 18° Low: 11°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>60</y>
+         <width>21</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>7°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>130</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Edinburgh</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>150</y>
+         <width>141</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(116, 116, 116);
+</string>
+       </property>
+       <property name="text">
+        <string>Rain. High: 12° Low: 8°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>130</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>19°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>200</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Bristol</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_23">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>270</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>New York</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_24">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>220</y>
+         <width>141</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(116, 116, 116);
+</string>
+       </property>
+       <property name="text">
+        <string>Snow. High: 8° Low: 2°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_25">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>290</y>
+         <width>141</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(116, 116, 116);
+</string>
+       </property>
+       <property name="text">
+        <string>Cloudy. High: 18° Low: 10°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>200</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>22°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_27">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>270</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>20°</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_28">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>350</y>
+         <width>21</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../img/arrow-removebg-preview.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QFrame" name="frame">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>271</width>
+         <height>391</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">    background: qlineargradient(
+        spread:pad,
+        x1:0, y1:0,
+        x2:0, y2:1,
+        stop:0 rgba(30, 35, 85, 200),   /* Màu xanh tím nhạt hơn, alpha 200 (hơi trong suốt) */
+        stop:1 rgba(18, 22, 50, 200)    /* Màu xanh tím đậm hơn, alpha 200 */
+    );
+    border: 1px solid rgba(255, 255, 255, 20);
+    border-radius: 8px;
+    padding: 8px;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+      </widget>
+      <zorder>frame</zorder>
+      <zorder>label_11</zorder>
+      <zorder>pushButton_4</zorder>
+      <zorder>pushButton_5</zorder>
+      <zorder>pushButton_8</zorder>
+      <zorder>pushButton_6</zorder>
+      <zorder>pushButton_7</zorder>
+      <zorder>label_13</zorder>
+      <zorder>label_14</zorder>
+      <zorder>label_15</zorder>
+      <zorder>label_16</zorder>
+      <zorder>label_12</zorder>
+      <zorder>label_17</zorder>
+      <zorder>label_18</zorder>
+      <zorder>label_19</zorder>
+      <zorder>label_20</zorder>
+      <zorder>label_21</zorder>
+      <zorder>label_22</zorder>
+      <zorder>label_23</zorder>
+      <zorder>label_24</zorder>
+      <zorder>label_25</zorder>
+      <zorder>label_26</zorder>
+      <zorder>label_27</zorder>
+      <zorder>label_28</zorder>
+     </widget>
+     <widget class="QFrame" name="frame_5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>761</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">    background: qradialgradient(
+        cx:0.5, cy:0.5, radius: 0.7,
+        fx:0.5, fy:0.5,
+        stop:0 rgba(70, 70, 150, 255),  /* Màu sáng ở trung tâm */
+        stop:1 rgba(10, 10, 50, 255)    /* Màu tối ở viền */
+    );</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
       </property>
      </widget>
+     <zorder>frame_5</zorder>
+     <zorder>widget_2</zorder>
+     <zorder>widget_3</zorder>
+     <zorder>widget_4</zorder>
+     <zorder>widget_5</zorder>
     </widget>
     <widget class="QWidget" name="page_2">
      <property name="styleSheet">
@@ -70,10 +1543,10 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>0</y>
-        <width>151</width>
-        <height>131</height>
+        <x>290</x>
+        <y>10</y>
+        <width>131</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="text">
@@ -89,7 +1562,7 @@
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>250</x>
+        <x>200</x>
         <y>140</y>
         <width>311</width>
         <height>31</height>
@@ -98,7 +1571,7 @@
       <property name="styleSheet">
        <string notr="true">font: 24pt &quot;Times New Roman&quot;;
 text-align: center;
-</string>
+color: rgb(255, 255, 255)</string>
       </property>
       <property name="text">
        <string>USER INFORMATION</string>
@@ -107,14 +1580,17 @@ text-align: center;
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>200</x>
         <y>190</y>
         <width>81</width>
         <height>21</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+       <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255)
+
+</string>
       </property>
       <property name="text">
        <string>First Name</string>
@@ -123,7 +1599,7 @@ text-align: center;
      <widget class="QLineEdit" name="lineEdit">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>200</x>
         <y>210</y>
         <width>311</width>
         <height>31</height>
@@ -138,14 +1614,15 @@ text-align: center;
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>200</x>
         <y>250</y>
         <width>101</width>
         <height>21</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+       <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255)</string>
       </property>
       <property name="text">
        <string>Middle Name</string>
@@ -154,7 +1631,7 @@ text-align: center;
      <widget class="QLineEdit" name="lineEdit_2">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>200</x>
         <y>270</y>
         <width>311</width>
         <height>31</height>
@@ -168,7 +1645,7 @@ text-align: center;
      <widget class="QLineEdit" name="lineEdit_3">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>200</x>
         <y>330</y>
         <width>311</width>
         <height>31</height>
@@ -182,14 +1659,15 @@ text-align: center;
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>200</x>
         <y>310</y>
         <width>81</width>
         <height>16</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+       <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255)</string>
       </property>
       <property name="text">
        <string>Last Name</string>
@@ -198,14 +1676,15 @@ text-align: center;
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>200</x>
         <y>370</y>
         <width>71</width>
         <height>20</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+       <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255)</string>
       </property>
       <property name="text">
        <string>Gender</string>
@@ -214,7 +1693,7 @@ text-align: center;
      <widget class="QLineEdit" name="lineEdit_4">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>200</x>
         <y>390</y>
         <width>311</width>
         <height>31</height>
@@ -228,7 +1707,7 @@ text-align: center;
      <widget class="QLineEdit" name="lineEdit_5">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>200</x>
         <y>510</y>
         <width>311</width>
         <height>31</height>
@@ -264,14 +1743,15 @@ text-align: center;
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>200</x>
         <y>490</y>
         <width>81</width>
         <height>16</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+       <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255)</string>
       </property>
       <property name="text">
        <string>Password</string>
@@ -280,14 +1760,15 @@ text-align: center;
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>200</x>
         <y>430</y>
         <width>101</width>
         <height>16</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+       <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255)</string>
       </property>
       <property name="text">
        <string>Email Address</string>
@@ -296,7 +1777,7 @@ text-align: center;
      <widget class="QLineEdit" name="lineEdit_6">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>200</x>
         <y>450</y>
         <width>311</width>
         <height>31</height>
@@ -310,7 +1791,7 @@ text-align: center;
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>700</x>
+        <x>630</x>
         <y>510</y>
         <width>81</width>
         <height>31</height>
@@ -318,7 +1799,8 @@ text-align: center;
       </property>
       <property name="styleSheet">
        <string notr="true"> border: 1px solid #ccc;    /* Viền 1px màu xám */
- border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            </string>
+ border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;
+color:rgb(255, 255, 255)            </string>
       </property>
       <property name="text">
        <string>Edit</string>
@@ -329,13 +1811,17 @@ text-align: center;
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>801</width>
-        <height>581</height>
+        <width>761</width>
+        <height>561</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, 
-                                stop: 0 #e0f7ff, stop: 1 #ffffff);</string>
+       <string notr="true">    background: qradialgradient(
+        cx:0.5, cy:0.5, radius: 0.7,
+        fx:0.5, fy:0.5,
+        stop:0 rgba(70, 70, 150, 255),  /* Màu sáng ở trung tâm */
+        stop:1 rgba(10, 10, 50, 255)    /* Màu tối ở viền */
+    );</string>
       </property>
      </widget>
      <zorder>widget</zorder>
@@ -356,6 +1842,108 @@ text-align: center;
      <zorder>lineEdit_6</zorder>
      <zorder>pushButton</zorder>
     </widget>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>41</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: qlineargradient(
+    spread:pad,
+    x1:0, y1:0,
+    x2:0, y2:1,
+    stop:0 rgba(30, 35, 85, 200),   /* Màu xanh tím nhạt hơn, alpha 200 */
+    stop:1 rgba(18, 22, 50, 200)    /* Màu xanh tím đậm hơn, alpha 200 */
+);
+border: 0px solid rgba(255, 255, 255, 20);
+border-radius: 0px;  /* Đặt thành 0 để thành hình chữ nhật */
+padding: 8px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../img/name_icon-removebg-preview.png</normaloff>../img/name_icon-removebg-preview.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>70</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset theme="QIcon::ThemeIcon::GoHome"/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_16">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>500</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset theme="QIcon::ThemeIcon::SystemLogOut"/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
