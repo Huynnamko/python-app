@@ -49,7 +49,7 @@
      <property name="styleSheet">
       <string notr="true">background-color: transparent</string>
      </property>
-     <widget class="QLineEdit" name="lineEdit_3">
+     <widget class="QLineEdit" name="txt_name">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -72,7 +72,7 @@ color: #333;
        <string>Name</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="txt_email">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -95,7 +95,7 @@ color: #333;
        <string>Email</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
+     <widget class="QLineEdit" name="txt_password">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -121,7 +121,7 @@ color: #333;
        <string>Password</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_login">
       <property name="geometry">
        <rect>
         <x>230</x>
@@ -143,7 +143,7 @@ background: none;</string>
        <string>Already have an account? Sign In</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btn_register">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -216,7 +216,7 @@ background:none;
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_4">
+     <widget class="QLineEdit" name="txt_conf_pwd">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -256,7 +256,7 @@ background:none;
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="btn_eye_p">
       <property name="geometry">
        <rect>
         <x>370</x>
@@ -282,7 +282,7 @@ background:none;
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="btn_eye_cp">
       <property name="geometry">
        <rect>
         <x>370</x>
@@ -309,16 +309,16 @@ background:none;
       </property>
      </widget>
      <zorder>pushButton_3</zorder>
-     <zorder>lineEdit_2</zorder>
-     <zorder>lineEdit</zorder>
-     <zorder>pushButton</zorder>
-     <zorder>pushButton_2</zorder>
+     <zorder>txt_password</zorder>
+     <zorder>txt_email</zorder>
+     <zorder>btn_login</zorder>
+     <zorder>btn_register</zorder>
      <zorder>label</zorder>
      <zorder>label_5</zorder>
-     <zorder>lineEdit_3</zorder>
-     <zorder>lineEdit_4</zorder>
-     <zorder>pushButton_4</zorder>
-     <zorder>pushButton_5</zorder>
+     <zorder>txt_name</zorder>
+     <zorder>txt_conf_pwd</zorder>
+     <zorder>btn_eye_p</zorder>
+     <zorder>btn_eye_cp</zorder>
     </widget>
    </widget>
   </widget>

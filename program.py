@@ -23,7 +23,7 @@ class MessageBox():
 class Login(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadui("ui/login.ui",self)
+        uic.loadUi("ui/login.ui",self)
 
         self.email = self.findChild(QLineEdit, "txt_email")
         self.password = self.findChild(QLineEdit, "txt_password")
@@ -38,15 +38,15 @@ class Login(QMainWindow):
     def hiddenOrShow(self, input:QLineEdit, button:QPushButton):
         if input.echoMode() == QLineEdit.EchoMode.Password:
             input.setEchoMode(QLineEdit.EchoMode.Normal)
-            button.setIcon(QIcon("img/eye-solid.svg"))
+            button.setIcon(QIcon("img/eye_open-removebg-preview.png"))
         else:
             input.setEchoMode(QLineEdit.EchoMode.Password)
-            button.setIcon(QIcon("img/eye-slash-solid.svg"))
+            button.setIcon(QIcon("img/eye_close-removebg-preview.png"))
 
     def login(self):
         msg = MessageBox()
-        email = self.email.text()
-        password = self.password.text()
+        email = self.email.text().strip()
+        password = self.password.text().strip()
 
         if email == "":
             msg.error_box("Email không được để trống")
@@ -90,25 +90,25 @@ class Register(QMainWindow):
         self.btn_eye_p = self.findChild(QPushButton, "btn_eye_p")
         self.btn_eye_cp = self.findChild(QPushButton, "btn_eye_cp")
 
-        self.btn_login.clicked.connect(self.login)
-        self.btn_register.clicked.connect(self.show_register)
+        self.btn_login.clicked.connect(self.show_login)
+        self.btn_register.clicked.connect(self.register)
         self.btn_eye_p.clicked.connect(lambda: self.hiddenOrShow(self.password, self.btn_eye_p))
         self.btn_eye_cp.clicked.connect(lambda: self.hiddenOrShow(self.confirm_password, self.btn_eye_cp))
 
     def hiddenOrShow(self, input:QLineEdit, button:QPushButton):
         if input.echoMode() == QLineEdit.EchoMode.Password:
             input.setEchoMode(QLineEdit.EchoMode.Normal)
-            button.setIcon(QIcon("img/eye-solid.svg"))
+            button.setIcon(QIcon("img/eye_open-removebg-preview.png"))
         else:
             input.setEchoMode(QLineEdit.EchoMode.Password)
-            button.setIcon(QIcon("img/eye-slash-solid.svg"))
+            button.setIcon(QIcon("img/eye_close-removebg-preview.png"))
 
     def register(self):
         msg = MessageBox()
-        name = self.name.text()
-        email = self.email.text()
-        password = self.password.text()
-        confirm_password = self.confirm_password.text()
+        name = self.name.text().strip()
+        email = self.email.text().strip()
+        password = self.password.text().strip()
+        confirm_password = self.confirm_password.text().strip()
 
         if name =="":
             msg.error_box("Họ tên không được để trống")
@@ -164,12 +164,39 @@ class Register(QMainWindow):
 class Home(QMainWindow):
     def __init__(self, user_id):
         super().__init__()
-        uic.loadUi("ui/home.ui", self)
+        uic.loadUi("ui/userpage.ui", self)
+        self.main_widget = self.findChild(QStackedWidget, "main_widget")
+        self.btn_nav_account = self.findChild(QPushButton, "btn_nav_account")
+        self.btn_nav_home = self.findChild(QPushButton, "btn_nav_home")
+        self.btn_nav_account.clicked.connect(lambda : self.navMainScreen(1))
+        self.btn_nav_home.clicked.connect(lambda : self.navMainScreen(0))
+
+        self.btn_logout = self.findChild(QPushButton, "btn_logout")
+        self.btn_logout.clicked.connect(self.show_login)
+        self.btn_calendar = self.findChild(QPushButton, "btn_calendar")
+        self.btn_calendar.clicked.connect(lambda : self.navMainScreen(2))
 
         self.user_id = user_id
+        self.user=get_user_by_id(self.user_id)
+        self.loadAccountInfo()
+
+    def navMainScreen(self, index):
+        self.main_widget.setCurrentIndex(index)
+
+    def show_login(self):
+        self.login= Login()
+        self.login.show()
+        self.close()
+
+    def loadAccountInfo(self):
+        self.txt_name = self.findChild(QLineEdit,"txt_name")
+        self.txt_email = self.findChild(QLineEdit,"txt_email")
+        self.txt_name.setText(self.user["name"])
+        self.txt_email.setText(self.user["email"])
 
 if __name__ == "__main__":
     app = QApplication([])
     login = Login()
     login.show()
     app.exec()  
+

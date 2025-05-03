@@ -80,7 +80,7 @@ background:none;</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="txt_email">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -103,7 +103,7 @@ background:none;</string>
        <string>Email</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
+     <widget class="QLineEdit" name="txt_password">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -122,11 +122,14 @@ background:none;</string>
     color: #333;
 </string>
       </property>
+      <property name="echoMode">
+       <enum>QLineEdit::EchoMode::Password</enum>
+      </property>
       <property name="placeholderText">
        <string>Password</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="btn_login">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -190,7 +193,7 @@ background:none;</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="btn_eye_p">
       <property name="geometry">
        <rect>
         <x>330</x>
@@ -216,7 +219,7 @@ background:none;</string>
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="btn_register">
       <property name="geometry">
        <rect>
         <x>190</x>
@@ -238,13 +241,13 @@ background: none;</string>
        <string>Don't have an account? Sign Up</string>
       </property>
      </widget>
-     <zorder>lineEdit</zorder>
-     <zorder>lineEdit_2</zorder>
-     <zorder>pushButton_2</zorder>
+     <zorder>txt_email</zorder>
+     <zorder>txt_password</zorder>
+     <zorder>btn_login</zorder>
      <zorder>pushButton</zorder>
      <zorder>label_4</zorder>
-     <zorder>pushButton_3</zorder>
-     <zorder>pushButton_4</zorder>
+     <zorder>btn_eye_p</zorder>
+     <zorder>btn_register</zorder>
      <zorder>label</zorder>
     </widget>
    </widget>

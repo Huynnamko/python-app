@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QStackedWidget" name="stackedWidget">
+   <widget class="QStackedWidget" name="main_widget">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -35,7 +35,7 @@
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>711</width>
+        <width>731</width>
         <height>51</height>
        </rect>
       </property>
@@ -142,64 +142,12 @@ color: rgb(255, 255, 255)</string>
         <string>London,UK</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_18">
-       <property name="geometry">
-        <rect>
-         <x>670</x>
-         <y>10</y>
-         <width>41</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border:none;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>../img/bell_icon-removebg-preview.png</normaloff>../img/bell_icon-removebg-preview.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_19">
-       <property name="geometry">
-        <rect>
-         <x>630</x>
-         <y>10</y>
-         <width>41</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border:none;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>../img/calendar_icon-removebg-preview.png</normaloff>../img/calendar_icon-removebg-preview.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-      </widget>
       <widget class="QFrame" name="frame_4">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>711</width>
+         <width>731</width>
          <height>51</height>
         </rect>
        </property>
@@ -221,14 +169,64 @@ color: rgb(255, 255, 255)</string>
        <property name="frameShadow">
         <enum>QFrame::Shadow::Raised</enum>
        </property>
+       <widget class="QPushButton" name="pushButton_18">
+        <property name="geometry">
+         <rect>
+          <x>680</x>
+          <y>10</y>
+          <width>41</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../img/bell_icon-removebg-preview.png</normaloff>../img/bell_icon-removebg-preview.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn_calendar">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>10</y>
+          <width>41</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../img/calendar_icon-removebg-preview.png</normaloff>../img/calendar_icon-removebg-preview.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+       </widget>
       </widget>
       <zorder>frame_4</zorder>
       <zorder>lineEdit_7</zorder>
       <zorder>label_66</zorder>
       <zorder>label_67</zorder>
       <zorder>label_68</zorder>
-      <zorder>pushButton_18</zorder>
-      <zorder>pushButton_19</zorder>
      </widget>
      <widget class="QWidget" name="widget_3" native="true">
       <property name="geometry">
@@ -320,6 +318,9 @@ color: rgb(255, 255, 255)</string>
          <height>111</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255)</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -386,6 +387,9 @@ color: rgb(255, 255, 255)</string>
          <width>101</width>
          <height>111</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255)</string>
        </property>
        <property name="text">
         <string/>
@@ -546,6 +550,9 @@ color: rgb(255, 255, 255)</string>
          <height>51</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255)</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -558,6 +565,9 @@ color: rgb(255, 255, 255)</string>
          <width>141</width>
          <height>51</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255)</string>
        </property>
        <property name="text">
         <string/>
@@ -572,6 +582,9 @@ color: rgb(255, 255, 255)</string>
          <height>51</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255)</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -584,6 +597,9 @@ color: rgb(255, 255, 255)</string>
          <width>141</width>
          <height>51</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255)</string>
        </property>
        <property name="text">
         <string/>
@@ -598,6 +614,9 @@ color: rgb(255, 255, 255)</string>
          <height>51</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255)</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -610,6 +629,9 @@ color: rgb(255, 255, 255)</string>
          <width>131</width>
          <height>51</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255)</string>
        </property>
        <property name="text">
         <string/>
@@ -1105,6 +1127,9 @@ color: rgb(255, 255, 255)</string>
          <height>51</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255)</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -1117,6 +1142,9 @@ color: rgb(255, 255, 255)</string>
          <width>251</width>
          <height>51</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255)</string>
        </property>
        <property name="text">
         <string/>
@@ -1157,6 +1185,9 @@ color: rgb(255, 255, 255)</string>
          <height>51</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255)</string>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -1169,6 +1200,9 @@ color: rgb(255, 255, 255)</string>
          <width>251</width>
          <height>51</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255)</string>
        </property>
        <property name="text">
         <string/>
@@ -1607,22 +1641,7 @@ color:rgb(255, 255, 255)
         <string>Gender</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_4">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>400</y>
-         <width>311</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"> border: 1px solid #ccc;    /* Viền 1px màu xám */
- border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            
-background-color:white</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="txt_name">
        <property name="geometry">
         <rect>
          <x>200</x>
@@ -1634,6 +1653,7 @@ background-color:white</string>
        <property name="styleSheet">
         <string notr="true"> border: 1px solid #ccc;    /* Viền 1px màu xám */
  border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            
+background-color:white
 </string>
        </property>
       </widget>
@@ -1655,7 +1675,7 @@ color:rgb(255, 255, 255)
         <string>Email Address</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_6">
+      <widget class="QLineEdit" name="txt_email">
        <property name="geometry">
         <rect>
          <x>200</x>
@@ -1666,7 +1686,8 @@ color:rgb(255, 255, 255)
        </property>
        <property name="styleSheet">
         <string notr="true"> border: 1px solid #ccc;    /* Viền 1px màu xám */
- border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            </string>
+ border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            
+background-color:white</string>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton">
@@ -1767,19 +1788,65 @@ color: rgb(255, 255, 255)</string>
        <property name="frameShadow">
         <enum>QFrame::Shadow::Raised</enum>
        </property>
+       <widget class="QComboBox" name="comboBox">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>400</y>
+          <width>311</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"> border: 1px solid #ccc;    /* Viền 1px màu xám */
+ border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            
+background-color:white</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Male</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Female</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Other</string>
+         </property>
+        </item>
+       </widget>
       </widget>
       <zorder>frame_6</zorder>
       <zorder>label_4</zorder>
       <zorder>label_5</zorder>
       <zorder>label_6</zorder>
-      <zorder>lineEdit_4</zorder>
-      <zorder>lineEdit</zorder>
+      <zorder>txt_name</zorder>
       <zorder>label_9</zorder>
-      <zorder>lineEdit_6</zorder>
+      <zorder>txt_email</zorder>
       <zorder>pushButton</zorder>
       <zorder>label</zorder>
       <zorder>label_3</zorder>
       <zorder>label_2</zorder>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QCalendarWidget" name="calendarWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>761</width>
+        <height>601</height>
+       </rect>
+      </property>
      </widget>
     </widget>
    </widget>
@@ -1808,11 +1875,11 @@ padding: 8px;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="btn_nav_account">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>10</y>
+      <y>80</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -1834,11 +1901,11 @@ padding: 8px;</string>
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="btn_nav_home">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>70</y>
+      <y>10</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -1861,11 +1928,11 @@ padding: 8px;</string>
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_16">
+   <widget class="QPushButton" name="btn_logout">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>520</y>
+      <y>510</y>
       <width>41</width>
       <height>41</height>
      </rect>
