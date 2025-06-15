@@ -165,19 +165,28 @@ class Home(QMainWindow):
     def __init__(self, user_id):
         super().__init__()
         uic.loadUi("ui/userpage.ui", self)
+
+        self.user_id = user_id
+        self.user=get_user_by_id(self.user_id)
+
         self.main_widget = self.findChild(QStackedWidget, "main_widget")
         self.btn_nav_account = self.findChild(QPushButton, "btn_nav_account")
         self.btn_nav_home = self.findChild(QPushButton, "btn_nav_home")
         self.btn_nav_account.clicked.connect(lambda : self.navMainScreen(1))
         self.btn_nav_home.clicked.connect(lambda : self.navMainScreen(0))
 
+        self.btn_avatar = self.findChild(QPushButton, "btn_avatar")
+        self.btn_avatar.clicked.connect(self.upadate_avatar)
+
+        self.btn_edit = self.findChild(QPushButton, "btn_edit")
+        self.btn_edit.clicked.connect(self.update_account_info)
+
+
         self.btn_logout = self.findChild(QPushButton, "btn_logout")
         self.btn_logout.clicked.connect(self.show_login)
         self.btn_calendar = self.findChild(QPushButton, "btn_calendar")
         self.btn_calendar.clicked.connect(lambda : self.navMainScreen(2))
 
-        self.user_id = user_id
-        self.user=get_user_by_id(self.user_id)
         self.loadAccountInfo()
 
     def navMainScreen(self, index):
@@ -193,6 +202,38 @@ class Home(QMainWindow):
         self.txt_email = self.findChild(QLineEdit,"txt_email")
         self.txt_name.setText(self.user["name"])
         self.txt_email.setText(self.user["email"])
+        self.btn_avatar.setIcon(QIcon(self.user["avatar"]))
+        self.txt_gender = self.findChild(QComboBox, "txt_gender")
+                                         
+    def upadate_avatar(self):
+        file,_ = QFileDialog.getOpenFileName(self, "Select image", "", "Images Files(*.png *.jpg *.jpeg *.bmp)")
+        if file:
+            self.user["avatar"] = file
+            self.btn_avatar.setIcon(QIcon(file))
+            update_user_avatar(self.user_id, file)
+
+    def update_account_info(self):
+        msg = MessageBox()
+        name = self.txt_name.text().strip()
+        gender_widget = self.findChild(QComboBox, "txt_gender")
+        if gender_widget:
+            gender = gender_widget.currentText()
+
+        if name == "":
+            msg.error_box("Họ tên không được để trống")
+            self.txt_name.setFocus()
+            return
+        if gender == "":
+            msg.error_box("Giới tính không được để trống")
+            return
+
+        try:
+            update_user(self.user_id, name, gender)  
+            self.user = get_user_by_id(self.user_id)
+            self.loadAccountInfo()
+            msg.success_box("Cập nhật thông tin thành công")
+        except Exception as e:
+            msg.error_box(f"Lỗi cập nhật: {e}")
 
 if __name__ == "__main__":
     app = QApplication([])
