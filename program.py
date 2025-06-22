@@ -176,7 +176,7 @@ class Home(QMainWindow):
         self.btn_nav_home.clicked.connect(lambda : self.navMainScreen(0))
 
         self.btn_avatar = self.findChild(QPushButton, "btn_avatar")
-        self.btn_avatar.clicked.connect(self.upadate_avatar)
+        self.btn_avatar.clicked.connect(self.update_avatar)
 
         self.btn_edit = self.findChild(QPushButton, "btn_edit")
         self.btn_edit.clicked.connect(self.update_account_info)
@@ -204,8 +204,11 @@ class Home(QMainWindow):
         self.txt_email.setText(self.user["email"])
         self.btn_avatar.setIcon(QIcon(self.user["avatar"]))
         self.txt_gender = self.findChild(QComboBox, "txt_gender")
+        self.txt_gender.setCurrentIndex(self.txt_gender.findText(self.user.get("gender", "")))
+        self.txt_birthday = self.findChild(QDateEdit, "txt_birthday")
+        self.txt_birthday.setDate(QDate.fromString(self.user.get("birthday", ""), "d/M/yyyy"))
                                          
-    def upadate_avatar(self):
+    def update_avatar(self):
         file,_ = QFileDialog.getOpenFileName(self, "Select image", "", "Images Files(*.png *.jpg *.jpeg *.bmp)")
         if file:
             self.user["avatar"] = file
@@ -216,28 +219,24 @@ class Home(QMainWindow):
         msg = MessageBox()
         name = self.txt_name.text().strip()
         gender_widget = self.findChild(QComboBox, "txt_gender")
+        birthday_widget = self.findChild(QDateEdit, "txt_birthday")
+        birthday = birthday_widget.date().toString("d/M/yyyy")
+
         if gender_widget:
             gender = gender_widget.currentText()
-
+            
         if name == "":
             msg.error_box("Họ tên không được để trống")
             self.txt_name.setFocus()
             return
-        if gender == "":
-            msg.error_box("Giới tính không được để trống")
-            return
 
-        try:
-            update_user(self.user_id, name, gender)  
-            self.user = get_user_by_id(self.user_id)
-            self.loadAccountInfo()
-            msg.success_box("Cập nhật thông tin thành công")
-        except Exception as e:
-            msg.error_box(f"Lỗi cập nhật: {e}")
+        update_user(self.user_id, name, gender, birthday)  
+        self.user = get_user_by_id(self.user_id)
+        self.loadAccountInfo()
+        msg.success_box("Cập nhật thông tin thành công")
 
 if __name__ == "__main__":
     app = QApplication([])
     login = Login()
     login.show()
     app.exec()  
-
