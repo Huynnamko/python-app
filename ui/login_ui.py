@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(796, 600)
         MainWindow.setStyleSheet("padding: 10px;\n"
 "    border: 1px solid #ddd;\n"
 "    border-radius: 5px;\n"
@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.widget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(0, 0, 801, 511))
+        self.widget.setGeometry(QtCore.QRect(0, 0, 801, 601))
         self.widget.setStyleSheet("    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, \n"
 "                                stop: 0 #e0f7ff, stop: 1 #ffffff);\n"
 "    font-family: \"Arial\";\n"
@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
 "    color: #333333;")
         self.widget.setObjectName("widget")
         self.widget_2 = QtWidgets.QWidget(parent=self.widget)
-        self.widget_2.setGeometry(QtCore.QRect(160, 30, 501, 451))
+        self.widget_2.setGeometry(QtCore.QRect(150, 50, 501, 501))
         self.widget_2.setStyleSheet("background-color: transparent")
         self.widget_2.setObjectName("widget_2")
         self.label = QtWidgets.QLabel(parent=self.widget_2)
@@ -70,7 +70,7 @@ class Ui_MainWindow(object):
 "")
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.pushButton_2 = QtWidgets.QPushButton(parent=self.widget_2)
-        self.pushButton_2.setGeometry(QtCore.QRect(120, 350, 261, 51))
+        self.pushButton_2.setGeometry(QtCore.QRect(120, 380, 261, 51))
         self.pushButton_2.setStyleSheet("background-color:#000000;\n"
 "font: 12pt \"Times New Roman\";\n"
 "color:#ffffff;\n"
@@ -101,6 +101,22 @@ class Ui_MainWindow(object):
         self.pushButton_3.setIcon(icon)
         self.pushButton_3.setIconSize(QtCore.QSize(24, 24))
         self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_4 = QtWidgets.QPushButton(parent=self.widget_2)
+        self.pushButton_4.setGeometry(QtCore.QRect(190, 340, 191, 41))
+        self.pushButton_4.setAutoFillBackground(False)
+        self.pushButton_4.setStyleSheet("font: 8pt \"Segoe UI\";\n"
+"border: none;\n"
+"background-color: #ffffff;\n"
+"background: none;")
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.lineEdit.raise_()
+        self.lineEdit_2.raise_()
+        self.pushButton_2.raise_()
+        self.pushButton.raise_()
+        self.label_4.raise_()
+        self.pushButton_3.raise_()
+        self.pushButton_4.raise_()
+        self.label.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -114,3 +130,4 @@ class Ui_MainWindow(object):
         self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "Password"))
         self.pushButton_2.setText(_translate("MainWindow", "SIGN IN"))
         self.pushButton.setText(_translate("MainWindow", "forgot password?"))
+        self.pushButton_4.setText(_translate("MainWindow", "Don\'t have an account? Sign Up"))

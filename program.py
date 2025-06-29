@@ -4,6 +4,7 @@ from PyQt6.QtGui import *
 from PyQt6.QtCore import *
 from PyQt6 import uic
 from database import *
+from weather_api import *
 
 class MessageBox():
     def success_box(self, message):
@@ -168,6 +169,7 @@ class Home(QMainWindow):
 
         self.user_id = user_id
         self.user=get_user_by_id(self.user_id)
+        self.msg = MessageBox()
 
         self.main_widget = self.findChild(QStackedWidget, "main_widget")
         self.btn_nav_account = self.findChild(QPushButton, "btn_nav_account")
@@ -188,6 +190,8 @@ class Home(QMainWindow):
         self.btn_calendar.clicked.connect(lambda : self.navMainScreen(2))
 
         self.loadAccountInfo()
+        self.setup_weather_widget()
+        self.load_today_weather("Saigon")
 
     def navMainScreen(self, index):
         self.main_widget.setCurrentIndex(index)
@@ -207,7 +211,7 @@ class Home(QMainWindow):
         self.txt_gender.setCurrentIndex(self.txt_gender.findText(self.user.get("gender", "")))
         self.txt_birthday = self.findChild(QDateEdit, "txt_birthday")
         self.txt_birthday.setDate(QDate.fromString(self.user.get("birthday", ""), "d/M/yyyy"))
-                                         
+
     def update_avatar(self):
         file,_ = QFileDialog.getOpenFileName(self, "Select image", "", "Images Files(*.png *.jpg *.jpeg *.bmp)")
         if file:
@@ -234,6 +238,18 @@ class Home(QMainWindow):
         self.user = get_user_by_id(self.user_id)
         self.loadAccountInfo()
         msg.success_box("Cập nhật thông tin thành công")
+        
+    def setup_weather_widget(self):
+        pass
+        
+    def load_today_weather(self, name):
+        data = get_weather_by_name(name)
+        if data["cod"] != 200:
+            self.msg.error_box(data["message"])
+            return False
+        
+        img_path = f"img/weather/{data['weather'][0]['icon']}.png"
+        temp = data['main']['temp']
 
 if __name__ == "__main__":
     app = QApplication([])

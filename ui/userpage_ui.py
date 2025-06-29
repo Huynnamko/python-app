@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.stackedWidget = QtWidgets.QStackedWidget(parent=self.centralwidget)
-        self.stackedWidget.setGeometry(QtCore.QRect(40, 0, 761, 581))
+        self.stackedWidget.setGeometry(QtCore.QRect(40, 0, 761, 601))
         self.stackedWidget.setStyleSheet("")
         self.stackedWidget.setObjectName("stackedWidget")
         self.page = QtWidgets.QWidget()
@@ -118,7 +118,7 @@ class Ui_MainWindow(object):
         self.pushButton_18.raise_()
         self.pushButton_19.raise_()
         self.widget_3 = QtWidgets.QWidget(parent=self.page)
-        self.widget_3.setGeometry(QtCore.QRect(10, 80, 451, 171))
+        self.widget_3.setGeometry(QtCore.QRect(10, 110, 451, 181))
         self.widget_3.setStyleSheet("")
         self.widget_3.setObjectName("widget_3")
         self.label_29 = QtWidgets.QLabel(parent=self.widget_3)
@@ -186,7 +186,7 @@ class Ui_MainWindow(object):
 "")
         self.label_40.setObjectName("label_40")
         self.frame_2 = QtWidgets.QFrame(parent=self.widget_3)
-        self.frame_2.setGeometry(QtCore.QRect(0, 0, 451, 171))
+        self.frame_2.setGeometry(QtCore.QRect(0, 0, 451, 181))
         self.frame_2.setStyleSheet("    background: qlineargradient(\n"
 "        spread:pad,\n"
 "        x1:0, y1:0,\n"
@@ -216,7 +216,7 @@ class Ui_MainWindow(object):
         self.label_39.raise_()
         self.label_40.raise_()
         self.widget_4 = QtWidgets.QWidget(parent=self.page)
-        self.widget_4.setGeometry(QtCore.QRect(10, 290, 451, 181))
+        self.widget_4.setGeometry(QtCore.QRect(10, 320, 451, 191))
         self.widget_4.setObjectName("widget_4")
         self.label_41 = QtWidgets.QLabel(parent=self.widget_4)
         self.label_41.setGeometry(QtCore.QRect(10, 10, 131, 21))
@@ -356,7 +356,7 @@ class Ui_MainWindow(object):
         self.label_65.setStyleSheet("font: 11pt \"Segoe UI\";")
         self.label_65.setObjectName("label_65")
         self.frame_3 = QtWidgets.QFrame(parent=self.widget_4)
-        self.frame_3.setGeometry(QtCore.QRect(0, 0, 451, 181))
+        self.frame_3.setGeometry(QtCore.QRect(0, 0, 451, 191))
         self.frame_3.setStyleSheet("    background: qlineargradient(\n"
 "        spread:pad,\n"
 "        x1:0, y1:0,\n"
@@ -403,7 +403,7 @@ class Ui_MainWindow(object):
         self.label_64.raise_()
         self.label_65.raise_()
         self.widget_5 = QtWidgets.QWidget(parent=self.page)
-        self.widget_5.setGeometry(QtCore.QRect(470, 80, 271, 391))
+        self.widget_5.setGeometry(QtCore.QRect(470, 110, 271, 401))
         self.widget_5.setStyleSheet("")
         self.widget_5.setObjectName("widget_5")
         self.label_11 = QtWidgets.QLabel(parent=self.widget_5)
@@ -520,7 +520,7 @@ class Ui_MainWindow(object):
         self.label_28.setScaledContents(True)
         self.label_28.setObjectName("label_28")
         self.frame = QtWidgets.QFrame(parent=self.widget_5)
-        self.frame.setGeometry(QtCore.QRect(0, 0, 271, 391))
+        self.frame.setGeometry(QtCore.QRect(0, 0, 271, 401))
         self.frame.setStyleSheet("    background: qlineargradient(\n"
 "        spread:pad,\n"
 "        x1:0, y1:0,\n"
@@ -559,7 +559,7 @@ class Ui_MainWindow(object):
         self.label_27.raise_()
         self.label_28.raise_()
         self.frame_5 = QtWidgets.QFrame(parent=self.page)
-        self.frame_5.setGeometry(QtCore.QRect(0, 0, 761, 571))
+        self.frame_5.setGeometry(QtCore.QRect(0, 0, 761, 621))
         self.frame_5.setStyleSheet("    background: qradialgradient(\n"
 "        cx:0.5, cy:0.5, radius: 0.7,\n"
 "        fx:0.5, fy:0.5,\n"
@@ -578,123 +578,105 @@ class Ui_MainWindow(object):
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setStyleSheet("")
         self.page_2.setObjectName("page_2")
-        self.label = QtWidgets.QLabel(parent=self.page_2)
-        self.label.setGeometry(QtCore.QRect(290, 10, 131, 121))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA08/HoangNam/python-app/ui/../img/name_icon-removebg-preview.png"))
-        self.label.setScaledContents(True)
-        self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(parent=self.page_2)
-        self.label_2.setGeometry(QtCore.QRect(200, 140, 311, 31))
-        self.label_2.setStyleSheet("font: 24pt \"Times New Roman\";\n"
-"text-align: center;\n"
-"color: rgb(255, 255, 255)")
-        self.label_2.setObjectName("label_2")
-        self.label_3 = QtWidgets.QLabel(parent=self.page_2)
-        self.label_3.setGeometry(QtCore.QRect(200, 190, 81, 21))
-        self.label_3.setStyleSheet("font: 12pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255)\n"
+        self.widget = QtWidgets.QWidget(parent=self.page_2)
+        self.widget.setGeometry(QtCore.QRect(0, 0, 781, 601))
+        self.widget.setStyleSheet("")
+        self.widget.setObjectName("widget")
+        self.label_4 = QtWidgets.QLabel(parent=self.widget)
+        self.label_4.setGeometry(QtCore.QRect(200, 310, 311, 31))
+        self.label_4.setStyleSheet(" border: 1px solid #ccc;    /* Viền 1px màu xám */\n"
+" border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            \n"
+"background-color:white")
+        self.label_4.setText("")
+        self.label_4.setObjectName("label_4")
+        self.label_5 = QtWidgets.QLabel(parent=self.widget)
+        self.label_5.setGeometry(QtCore.QRect(200, 280, 91, 21))
+        self.label_5.setStyleSheet("font: 12pt \"Segoe UI\";\n"
+"color:rgb(255, 255, 255)            \n"
 "\n"
 "")
-        self.label_3.setObjectName("label_3")
-        self.lineEdit = QtWidgets.QLineEdit(parent=self.page_2)
-        self.lineEdit.setGeometry(QtCore.QRect(200, 210, 311, 31))
+        self.label_5.setObjectName("label_5")
+        self.label_6 = QtWidgets.QLabel(parent=self.widget)
+        self.label_6.setGeometry(QtCore.QRect(200, 370, 71, 20))
+        self.label_6.setStyleSheet("font: 12pt \"Segoe UI\";\n"
+"color:rgb(255, 255, 255)            \n"
+"")
+        self.label_6.setObjectName("label_6")
+        self.lineEdit_4 = QtWidgets.QLineEdit(parent=self.widget)
+        self.lineEdit_4.setGeometry(QtCore.QRect(200, 400, 311, 31))
+        self.lineEdit_4.setStyleSheet(" border: 1px solid #ccc;    /* Viền 1px màu xám */\n"
+" border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            \n"
+"background-color:white")
+        self.lineEdit_4.setObjectName("lineEdit_4")
+        self.lineEdit = QtWidgets.QLineEdit(parent=self.widget)
+        self.lineEdit.setGeometry(QtCore.QRect(200, 220, 311, 31))
         self.lineEdit.setStyleSheet(" border: 1px solid #ccc;    /* Viền 1px màu xám */\n"
 " border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            \n"
 "")
         self.lineEdit.setObjectName("lineEdit")
-        self.label_4 = QtWidgets.QLabel(parent=self.page_2)
-        self.label_4.setGeometry(QtCore.QRect(200, 250, 101, 21))
-        self.label_4.setStyleSheet("font: 12pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255)")
-        self.label_4.setObjectName("label_4")
-        self.lineEdit_2 = QtWidgets.QLineEdit(parent=self.page_2)
-        self.lineEdit_2.setGeometry(QtCore.QRect(200, 270, 311, 31))
-        self.lineEdit_2.setStyleSheet(" border: 1px solid #ccc;    /* Viền 1px màu xám */\n"
-" border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            ")
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.lineEdit_3 = QtWidgets.QLineEdit(parent=self.page_2)
-        self.lineEdit_3.setGeometry(QtCore.QRect(200, 330, 311, 31))
-        self.lineEdit_3.setStyleSheet(" border: 1px solid #ccc;    /* Viền 1px màu xám */\n"
-" border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            ")
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.label_5 = QtWidgets.QLabel(parent=self.page_2)
-        self.label_5.setGeometry(QtCore.QRect(200, 310, 81, 16))
-        self.label_5.setStyleSheet("font: 12pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255)")
-        self.label_5.setObjectName("label_5")
-        self.label_6 = QtWidgets.QLabel(parent=self.page_2)
-        self.label_6.setGeometry(QtCore.QRect(200, 370, 71, 20))
-        self.label_6.setStyleSheet("font: 12pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255)")
-        self.label_6.setObjectName("label_6")
-        self.lineEdit_4 = QtWidgets.QLineEdit(parent=self.page_2)
-        self.lineEdit_4.setGeometry(QtCore.QRect(200, 390, 311, 31))
-        self.lineEdit_4.setStyleSheet(" border: 1px solid #ccc;    /* Viền 1px màu xám */\n"
-" border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            ")
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.lineEdit_5 = QtWidgets.QLineEdit(parent=self.page_2)
-        self.lineEdit_5.setGeometry(QtCore.QRect(200, 510, 311, 31))
-        self.lineEdit_5.setStyleSheet(" border: 1px solid #ccc;    /* Viền 1px màu xám */\n"
-" border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            ")
-        self.lineEdit_5.setInputMask("")
-        self.lineEdit_5.setText("")
-        self.lineEdit_5.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
-        self.lineEdit_5.setObjectName("lineEdit_5")
-        self.label_7 = QtWidgets.QLabel(parent=self.page_2)
-        self.label_7.setGeometry(QtCore.QRect(240, 440, 91, 16))
-        self.label_7.setText("")
-        self.label_7.setObjectName("label_7")
-        self.label_8 = QtWidgets.QLabel(parent=self.page_2)
-        self.label_8.setGeometry(QtCore.QRect(200, 490, 81, 16))
-        self.label_8.setStyleSheet("font: 12pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255)")
-        self.label_8.setObjectName("label_8")
-        self.label_9 = QtWidgets.QLabel(parent=self.page_2)
-        self.label_9.setGeometry(QtCore.QRect(200, 430, 101, 16))
+        self.label_9 = QtWidgets.QLabel(parent=self.widget)
+        self.label_9.setGeometry(QtCore.QRect(200, 460, 101, 16))
         self.label_9.setStyleSheet("font: 12pt \"Segoe UI\";\n"
-"color: rgb(255, 255, 255)")
+"color:rgb(255, 255, 255)            \n"
+"")
         self.label_9.setObjectName("label_9")
-        self.lineEdit_6 = QtWidgets.QLineEdit(parent=self.page_2)
-        self.lineEdit_6.setGeometry(QtCore.QRect(200, 450, 311, 31))
+        self.lineEdit_6 = QtWidgets.QLineEdit(parent=self.widget)
+        self.lineEdit_6.setGeometry(QtCore.QRect(200, 490, 311, 31))
         self.lineEdit_6.setStyleSheet(" border: 1px solid #ccc;    /* Viền 1px màu xám */\n"
 " border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;            ")
         self.lineEdit_6.setObjectName("lineEdit_6")
-        self.pushButton = QtWidgets.QPushButton(parent=self.page_2)
-        self.pushButton.setGeometry(QtCore.QRect(630, 510, 81, 31))
+        self.pushButton = QtWidgets.QPushButton(parent=self.widget)
+        self.pushButton.setGeometry(QtCore.QRect(600, 490, 101, 31))
         self.pushButton.setStyleSheet(" border: 1px solid #ccc;    /* Viền 1px màu xám */\n"
 " border-radius: 10px;         /* Góc bo tròn với bán kính 10px */ padding: 5px;\n"
 "color:rgb(255, 255, 255)            ")
         self.pushButton.setObjectName("pushButton")
-        self.widget = QtWidgets.QWidget(parent=self.page_2)
-        self.widget.setGeometry(QtCore.QRect(0, 0, 761, 561))
-        self.widget.setStyleSheet("    background: qradialgradient(\n"
+        self.label = QtWidgets.QLabel(parent=self.widget)
+        self.label.setGeometry(QtCore.QRect(280, 10, 151, 131))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA08/HoangNam/python-app/ui/../img/circle-user-regular.svg"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
+        self.label_3 = QtWidgets.QLabel(parent=self.widget)
+        self.label_3.setGeometry(QtCore.QRect(200, 190, 91, 21))
+        self.label_3.setStyleSheet("font: 12pt \"Segoe UI\";\n"
+"color:rgb(255, 255, 255)            \n"
+"\n"
+"\n"
+"")
+        self.label_3.setObjectName("label_3")
+        self.label_2 = QtWidgets.QLabel(parent=self.widget)
+        self.label_2.setGeometry(QtCore.QRect(200, 150, 311, 31))
+        self.label_2.setStyleSheet("font: 24pt \"Times New Roman\";\n"
+"text-align: center;\n"
+"color: rgb(255, 255, 255)")
+        self.label_2.setObjectName("label_2")
+        self.frame_6 = QtWidgets.QFrame(parent=self.widget)
+        self.frame_6.setGeometry(QtCore.QRect(0, 0, 761, 601))
+        self.frame_6.setStyleSheet("    background: qradialgradient(\n"
 "        cx:0.5, cy:0.5, radius: 0.7,\n"
 "        fx:0.5, fy:0.5,\n"
 "        stop:0 rgba(70, 70, 150, 255),  /* Màu sáng ở trung tâm */\n"
 "        stop:1 rgba(10, 10, 50, 255)    /* Màu tối ở viền */\n"
 "    );")
-        self.widget.setObjectName("widget")
-        self.widget.raise_()
-        self.label.raise_()
-        self.label_2.raise_()
-        self.label_3.raise_()
-        self.lineEdit.raise_()
+        self.frame_6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_6.setObjectName("frame_6")
+        self.frame_6.raise_()
         self.label_4.raise_()
-        self.lineEdit_2.raise_()
-        self.lineEdit_3.raise_()
         self.label_5.raise_()
         self.label_6.raise_()
         self.lineEdit_4.raise_()
-        self.lineEdit_5.raise_()
-        self.label_7.raise_()
-        self.label_8.raise_()
+        self.lineEdit.raise_()
         self.label_9.raise_()
         self.lineEdit_6.raise_()
         self.pushButton.raise_()
+        self.label.raise_()
+        self.label_3.raise_()
+        self.label_2.raise_()
         self.stackedWidget.addWidget(self.page_2)
         self.label_10 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_10.setGeometry(QtCore.QRect(0, 0, 41, 561))
+        self.label_10.setGeometry(QtCore.QRect(0, 0, 41, 601))
         self.label_10.setStyleSheet("background: qlineargradient(\n"
 "    spread:pad,\n"
 "    x1:0, y1:0,\n"
@@ -712,35 +694,30 @@ class Ui_MainWindow(object):
         self.pushButton_2.setStyleSheet("border:none;")
         self.pushButton_2.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA08/HoangNam/python-app/ui/../img/name_icon-removebg-preview.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon2.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA08/HoangNam/python-app/ui/../img/circle-user-regular.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_2.setIcon(icon2)
-        self.pushButton_2.setIconSize(QtCore.QSize(40, 40))
+        self.pushButton_2.setIconSize(QtCore.QSize(35, 35))
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButton_3.setGeometry(QtCore.QRect(0, 70, 41, 41))
         self.pushButton_3.setStyleSheet("border:none;\n"
 "")
         self.pushButton_3.setText("")
-        icon = QtGui.QIcon.fromTheme("QIcon::ThemeIcon::GoHome")
-        self.pushButton_3.setIcon(icon)
-        self.pushButton_3.setIconSize(QtCore.QSize(40, 40))
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA08/HoangNam/python-app/ui/../img/house-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButton_3.setIcon(icon3)
+        self.pushButton_3.setIconSize(QtCore.QSize(35, 35))
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_16 = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton_16.setGeometry(QtCore.QRect(0, 500, 41, 41))
+        self.pushButton_16.setGeometry(QtCore.QRect(0, 520, 41, 41))
         self.pushButton_16.setStyleSheet("border:none")
         self.pushButton_16.setText("")
-        icon = QtGui.QIcon.fromTheme("QIcon::ThemeIcon::SystemLogOut")
-        self.pushButton_16.setIcon(icon)
-        self.pushButton_16.setIconSize(QtCore.QSize(40, 40))
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("/Users/pinxun/Documents/MindX/PTA/PTA08/HoangNam/python-app/ui/../img/right-from-bracket-solid.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButton_16.setIcon(icon4)
+        self.pushButton_16.setIconSize(QtCore.QSize(35, 35))
         self.pushButton_16.setObjectName("pushButton_16")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(0)
@@ -794,11 +771,9 @@ class Ui_MainWindow(object):
         self.label_25.setText(_translate("MainWindow", "Cloudy. High: 18° Low: 10°"))
         self.label_26.setText(_translate("MainWindow", "22°"))
         self.label_27.setText(_translate("MainWindow", "20°"))
-        self.label_2.setText(_translate("MainWindow", "USER INFORMATION"))
-        self.label_3.setText(_translate("MainWindow", "First Name"))
-        self.label_4.setText(_translate("MainWindow", "Middle Name"))
-        self.label_5.setText(_translate("MainWindow", "Last Name"))
+        self.label_5.setText(_translate("MainWindow", "Birthday"))
         self.label_6.setText(_translate("MainWindow", "Gender"))
-        self.label_8.setText(_translate("MainWindow", "Password"))
         self.label_9.setText(_translate("MainWindow", "Email Address"))
         self.pushButton.setText(_translate("MainWindow", "Edit"))
+        self.label_3.setText(_translate("MainWindow", "User\'s name"))
+        self.label_2.setText(_translate("MainWindow", "USER INFORMATION"))

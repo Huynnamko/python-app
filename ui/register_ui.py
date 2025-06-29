@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.widget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(0, 0, 801, 511))
+        self.widget.setGeometry(QtCore.QRect(0, 0, 801, 601))
         self.widget.setStyleSheet("    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, \n"
 "                                stop: 0 #e0f7ff, stop: 1 #ffffff);\n"
 "    font-family: \"Arial\";\n"
@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
 "    color: #333333;")
         self.widget.setObjectName("widget")
         self.widget_2 = QtWidgets.QWidget(parent=self.widget)
-        self.widget_2.setGeometry(QtCore.QRect(120, 10, 591, 481))
+        self.widget_2.setGeometry(QtCore.QRect(110, 40, 571, 521))
         self.widget_2.setStyleSheet("background-color: transparent")
         self.widget_2.setObjectName("widget_2")
         self.lineEdit_3 = QtWidgets.QLineEdit(parent=self.widget_2)
