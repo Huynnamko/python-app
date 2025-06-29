@@ -14,7 +14,7 @@ def connect_db():
 def create_user(name,email,password):
     conn=connect_db()
     cursor=conn.cursor()
-    cursor.execute("INSERT INTO users (name,email,passoword) VALUES (?,?,?)", (name,email,password))
+    cursor.execute("INSERT INTO users (name,email,password) VALUES (?,?,?)", (name,email,password))
     conn.commit()
     conn.close()
 
