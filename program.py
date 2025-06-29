@@ -250,9 +250,31 @@ class Home(QMainWindow):
         
         img_path = f"img/weather/{data['weather'][0]['icon']}.png"
         temp = data['main']['temp']
-
+        humidity = data['main']['humidity']
+        wind_speed = data['wind']['speed']
+        weather = data['weather'][0]['description']
+        city = data['name']
+        country = data['sys']['country']
+        feel_like = data['main']['feels_like']
+        self.img_weather = self.findChild(QLabel, "img_weather")
+        self.img_weather.setPixmap(QPixmap(img_path))
+        self.txt_temp = self.findChild(QLabel, "txt_temp")
+        self.txt_temp.setText(f"{temp}°C")
+        self.txt_humidity = self.findChild(QLabel, "txt_humidity")
+        self.txt_humidity.setText(f"Humidity: \n{humidity}%")
+        self.txt_wind_speed = self.findChild(QLabel, "txt_wind_speed")
+        self.txt_wind_speed.setText(f"Wind Speed:\n{wind_speed} m/s")
+        self.txt_weather = self.findChild(QLabel, "txt_weather")
+        self.txt_weather.setText(f"{weather.capitalize()}")
+        self.txt_feel_like = self.findChild(QLabel, "txt_feel_like")
+        self.txt_feel_like.setText(f"Feels like: \n{feel_like}°C")
+        self.txt_city_name_main = self.findChild(QLabel, "txt_city_name_main")
+        self.txt_city_name_main.setText(f"{city}, \n{country}")
+        self.txt_city_name = self.findChild(QLabel, "txt_city_name")
+        self.txt_city_name.setText(f"{city}, {country}")
 if __name__ == "__main__":
     app = QApplication([])
     login = Login()
+    login=Home(1)
     login.show()
     app.exec()  
