@@ -80,55 +80,6 @@ background:none;</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="txt_email">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>190</y>
-        <width>261</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 18px;
-
-    font-size: 14px;
-    color: #333;
-</string>
-      </property>
-      <property name="placeholderText">
-       <string>Email</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="txt_password">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>260</y>
-        <width>261</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 18px;
- 
-    font-size: 14px;
-    color: #333;
-</string>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::EchoMode::Password</enum>
-      </property>
-      <property name="placeholderText">
-       <string>Password</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="btn_login">
       <property name="geometry">
        <rect>
@@ -196,8 +147,8 @@ background:none;</string>
      <widget class="QPushButton" name="btn_eye_p">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>260</y>
+        <x>340</x>
+        <y>270</y>
         <width>41</width>
         <height>41</height>
        </rect>
@@ -241,14 +192,65 @@ background: none;</string>
        <string>Don't have an account? Sign Up</string>
       </property>
      </widget>
-     <zorder>txt_email</zorder>
-     <zorder>txt_password</zorder>
+     <widget class="QWidget" name="gridWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>160</y>
+        <width>261</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLineEdit" name="txt_email">
+         <property name="styleSheet">
+          <string notr="true">
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 18px;
+
+    font-size: 14px;
+    color: #333;
+</string>
+         </property>
+         <property name="placeholderText">
+          <string>Email</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLineEdit" name="txt_password">
+         <property name="styleSheet">
+          <string notr="true">
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 18px;
+ 
+    font-size: 14px;
+    color: #333;
+</string>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::EchoMode::Password</enum>
+         </property>
+         <property name="placeholderText">
+          <string>Password</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <zorder>btn_login</zorder>
      <zorder>pushButton</zorder>
      <zorder>label_4</zorder>
-     <zorder>btn_eye_p</zorder>
      <zorder>btn_register</zorder>
      <zorder>label</zorder>
+     <zorder>gridWidget</zorder>
+     <zorder>btn_eye_p</zorder>
     </widget>
    </widget>
   </widget>

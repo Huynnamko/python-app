@@ -183,15 +183,19 @@ class Home(QMainWindow):
         self.btn_edit = self.findChild(QPushButton, "btn_edit")
         self.btn_edit.clicked.connect(self.update_account_info)
 
-
         self.btn_logout = self.findChild(QPushButton, "btn_logout")
         self.btn_logout.clicked.connect(self.show_login)
         self.btn_calendar = self.findChild(QPushButton, "btn_calendar")
         self.btn_calendar.clicked.connect(lambda : self.navMainScreen(2))
 
+        self.txt_city_search= self.findChild(QLineEdit, "txt_city_search")
+        self.txt_city_search.returnPressed.connect(self.search_city)
+        self.txt_city_search.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
+        
         self.loadAccountInfo()
+        self.current_city = "Ho Chi Minh"
         self.setup_weather_widget()
-        self.load_today_weather("Saigon")
+        self.load_today_weather(self.current_city)
 
     def navMainScreen(self, index):
         self.main_widget.setCurrentIndex(index)
@@ -238,17 +242,62 @@ class Home(QMainWindow):
         self.user = get_user_by_id(self.user_id)
         self.loadAccountInfo()
         msg.success_box("Cập nhật thông tin thành công")
+
+    def search_city(self):
+        city = self.txt_city_search.text().strip()
+        if city:
+            self.current_city = city 
+            self.load_today_weather(city)
+            self.setup_weather_widget()
+        else:
+            self.msg.error_box("Vui lòng nhập tên thành phố!")
         
     def setup_weather_widget(self):
-        pass
+        data_forecast = get_weather_forecast_by_name(self.current_city)
+        if data_forecast["cod"] != "200":
+            self.msg.error_box(data_forecast["message"])
+            return False
         
+        days = []
+        used_dates = set()
+        for item in data_forecast['list']:
+            day = item['dt_txt'].split(" ")[0]
+            if day not in used_dates:
+                days.append(item)
+                used_dates.add(day)
+            if len(days) == 5:
+                break
+
+        for i, item in enumerate(days):
+            img_path = f"weather_icons/{item['weather'][0]['icon']}.png"
+            day = item['dt_txt'].split(" ")[0]
+            description = item['weather'][0]['description']
+            temp_max = item['main']['temp_max']
+            temp_min = item['main']['temp_min']
+            temp = item['main']['temp']
+            information = f"{description.capitalize()}. High: {temp_max}° Low: {temp_min}°"
+
+            img_weather_forecast = self.findChild(QLabel, f"img_weather_forecast_{i}")
+            weather_forecast_day = self.findChild(QLabel, f"txt_weather_forecast_day_{i}")
+            weather_forecast_information = self.findChild(QLabel, f"txt_weather_forecast_information_{i}")
+            weather_forecast_temp = self.findChild(QLabel, f"txt_weather_forecast_temp_{i}")
+
+            if img_weather_forecast:
+                img_weather_forecast.setPixmap(QPixmap(img_path))
+            if weather_forecast_day:
+                weather_forecast_day.setText(day)
+            if weather_forecast_information:
+                weather_forecast_information.setText(information)
+            if weather_forecast_temp:
+                weather_forecast_temp.setText(f"{temp}°C")
+
     def load_today_weather(self, name):
         data = get_weather_by_name(name)
         if data["cod"] != 200:
             self.msg.error_box(data["message"])
             return False
         
-        img_path = f"img/weather/{data['weather'][0]['icon']}.png"
+        img_path = f"weather_icons/{data['weather'][0]['icon']}.png"
         temp = data['main']['temp']
         humidity = data['main']['humidity']
         wind_speed = data['wind']['speed']
@@ -256,6 +305,9 @@ class Home(QMainWindow):
         city = data['name']
         country = data['sys']['country']
         feel_like = data['main']['feels_like']
+        high_temp = data['main']['temp_max']
+        low_temp = data['main']['temp_min']
+        visibility = data['visibility'] / 1000
         self.img_weather = self.findChild(QLabel, "img_weather")
         self.img_weather.setPixmap(QPixmap(img_path))
         self.txt_temp = self.findChild(QLabel, "txt_temp")
@@ -272,6 +324,12 @@ class Home(QMainWindow):
         self.txt_city_name_main.setText(f"{city}, \n{country}")
         self.txt_city_name = self.findChild(QLabel, "txt_city_name")
         self.txt_city_name.setText(f"{city}, {country}")
+        self.txt_high_temp = self.findChild(QLabel, "txt_high_temp")
+        self.txt_high_temp.setText(f"High: \n{high_temp}°C")
+        self.txt_low_temp = self.findChild(QLabel, "txt_low_temp")
+        self.txt_low_temp.setText(f"Low: \n{low_temp}°C")
+        self.txt_visibility = self.findChild(QLabel, "txt_visibility")
+        self.txt_visibility.setText(f"Visibility: \n{visibility} km")
 if __name__ == "__main__":
     app = QApplication([])
     login = Login()
