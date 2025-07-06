@@ -2023,6 +2023,10 @@ border:none;
           <height>521</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;
+</string>
+        </property>
         <layout class="QGridLayout" name="gridLayout_2"/>
        </widget>
       </widget>

@@ -5,6 +5,7 @@ from PyQt6.QtCore import *
 from PyQt6 import uic
 from database import *
 from weather_api import *
+from Notes import NoteDialog
 
 class MessageBox():
     def success_box(self, message):
@@ -197,6 +198,15 @@ class Home(QMainWindow):
         self.setup_weather_widget()
         self.load_today_weather(self.current_city)
 
+        self.notes_by_date = {}
+        self.note_area = self.findChild(QWidget, "user_note_days")
+        self.note_layout = QVBoxLayout()
+        self.note_area.setLayout(self.note_layout)
+        self.btn_add_note = self.findChild(QPushButton, "btn_add_note")
+        self.btn_add_note.clicked.connect(self.add_note_for_selected_day)
+        self.calendar = self.findChild(QCalendarWidget, "calendarWidget")
+        self.calendar.selectionChanged.connect(self.update_notes_display)
+
     def navMainScreen(self, index):
         self.main_widget.setCurrentIndex(index)
 
@@ -275,7 +285,7 @@ class Home(QMainWindow):
             temp_max = item['main']['temp_max']
             temp_min = item['main']['temp_min']
             temp = item['main']['temp']
-            information = f"{description.capitalize()}. High: {temp_max}° Low: {temp_min}°"
+            information = f"{description.capitalize()}. High: {temp_max}°C\nLow: {temp_min}°C"
 
             img_weather_forecast = self.findChild(QLabel, f"img_weather_forecast_{i}")
             weather_forecast_day = self.findChild(QLabel, f"txt_weather_forecast_day_{i}")
@@ -330,6 +340,39 @@ class Home(QMainWindow):
         self.txt_low_temp.setText(f"Low: \n{low_temp}°C")
         self.txt_visibility = self.findChild(QLabel, "txt_visibility")
         self.txt_visibility.setText(f"Visibility: \n{visibility} km")
+
+    def add_note_for_selected_day(self):
+        dialog = NoteDialog(self)
+        if dialog.exec() == QDialog.DialogCode.Accepted:
+            note = dialog.get_note()
+            if note:
+                date_str = self.calendar.selectedDate().toString("yyyy-MM-dd")
+                self.notes_by_date.setdefault(date_str, []).append(note)
+                self.update_notes_display()
+
+    def update_notes_display(self):
+        while self.note_layout.count():
+            item = self.note_layout.takeAt(0)
+            widget = item.widget()
+            if widget:
+                widget.deleteLater()
+
+        date_str = self.calendar.selectedDate().toString("yyyy-MM-dd")
+        notes = self.notes_by_date.get(date_str, [])
+
+        for note in notes:
+            lbl = QLabel(note)
+            lbl.setWordWrap(True)
+            lbl.setStyleSheet("""
+                QLabel {
+                    background-color: #2a2a4f;
+                    color: white;
+                    border-radius: 6px;
+                    padding: 6px;
+                }
+            """)
+            self.note_layout.addWidget(lbl)
+
 if __name__ == "__main__":
     app = QApplication([])
     login = Login()
