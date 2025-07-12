@@ -2014,16 +2014,43 @@ border:none;
          <string>User note days</string>
         </property>
        </widget>
-       <widget class="QWidget" name="user_note_days" native="true">
+       <widget class="QScrollArea" name="scrollArea">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>39</y>
+          <x>-1</x>
+          <y>50</y>
           <width>231</width>
-          <height>521</height>
+          <height>511</height>
          </rect>
         </property>
-        <layout class="QGridLayout" name="gridLayout_2"/>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>213</width>
+           <height>493</height>
+          </rect>
+         </property>
+         <widget class="QWidget" name="user_note_days" native="true">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>211</width>
+            <height>501</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border:none;
+</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2"/>
+         </widget>
+        </widget>
        </widget>
       </widget>
      </widget>

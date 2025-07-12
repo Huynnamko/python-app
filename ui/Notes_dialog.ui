@@ -50,6 +50,9 @@
      <height>191</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -88,16 +91,12 @@ color:rgb(255, 255, 255);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">    background: qlineargradient(
-        spread:pad,
-        x1:0, y1:0,
-        x2:0, y2:1,
-        stop:0 rgba(30, 35, 85, 200),   /* Màu xanh tím nhạt hơn, alpha 200 (hơi trong suốt) */
-        stop:1 rgba(18, 22, 50, 200)    /* Màu xanh tím đậm hơn, alpha 200 */
-    );
-    border: 1px solid rgba(255, 255, 255, 20);
-    border-radius: 8px;
-    padding: 8px;</string>
+    <string notr="true">    background: qradialgradient(
+        cx:0.5, cy:0.5, radius: 0.7,
+        fx:0.5, fy:0.5,
+        stop:0 rgba(70, 70, 150, 255),  /* Màu sáng ở trung tâm */
+        stop:1 rgba(10, 10, 50, 255)    /* Màu tối ở viền */
+    );</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::Shape::StyledPanel</enum>
