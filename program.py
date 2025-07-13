@@ -209,19 +209,13 @@ class Home(QMainWindow):
 
     def open_note_dialog(self):
         dialog = NoteDialog(self)
-        selected_date = self.calendarWidget.selectedDate()
-        dialog.dateTimeEdit.setDate(selected_date)
+        dialog.dateTimeEdit.setDate(self.calendarWidget.selectedDate())
+
         if dialog.exec() == QDialog.DialogCode.Accepted:
             note_widget = dialog.to_widget()
             if note_widget:
-                note_widget.setMinimumHeight(80)
-                note_widget.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+                note_widget.setMinimumHeight(291)
                 self.noteLayout.addWidget(note_widget)
-                note_widget.show()
-                new_height = self.noteLayout.count() * 90  
-                self.user_note_days.setMinimumHeight(new_height)
-                self.user_note_days.adjustSize()
-                self.scrollArea.widget().adjustSize()
                 self.scrollArea.ensureWidgetVisible(note_widget)
             
     def navMainScreen(self, index):

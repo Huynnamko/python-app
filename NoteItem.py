@@ -14,13 +14,12 @@ class NoteItem(QWidget):
         self.text_note.setText(note_text)
         self.label_date.setText(note_date.toString("dd/MM/yyyy"))
         self.text_note.setReadOnly(True)
-        self.setMinimumHeight(120)
+        self.setMinimumHeight(60)
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         self.text_note.setMinimumHeight(60)
         self.text_note.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.btn_edit.clicked.connect(self.edit_note)
         self.btn_delete.clicked.connect(self.delete_note)
-        self.setMinimumSize(100, 100)
 
     def edit_note(self):
         if self.text_note.isReadOnly():
@@ -32,4 +31,4 @@ class NoteItem(QWidget):
 
     def delete_note(self):
         self.setParent(None)
-        self.deleteLater()
+        self.deleteLater() 

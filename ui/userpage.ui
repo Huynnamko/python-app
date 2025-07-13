@@ -1753,9 +1753,9 @@ color:rgb(255, 255, 255)            </string>
       <widget class="QWidget" name="widget_6" native="true">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>10</x>
          <y>20</y>
-         <width>481</width>
+         <width>401</width>
          <height>61</height>
         </rect>
        </property>
@@ -1769,7 +1769,7 @@ color:rgb(255, 255, 255)            </string>
          <rect>
           <x>-1</x>
           <y>0</y>
-          <width>481</width>
+          <width>401</width>
           <height>61</height>
          </rect>
         </property>
@@ -1794,7 +1794,7 @@ color:rgb(255, 255, 255)            </string>
         <widget class="QLabel" name="label">
          <property name="geometry">
           <rect>
-           <x>200</x>
+           <x>160</x>
            <y>10</y>
            <width>71</width>
            <height>41</height>
@@ -1814,9 +1814,9 @@ border:none;
         <widget class="QPushButton" name="btn_add_note">
          <property name="geometry">
           <rect>
-           <x>374</x>
+           <x>314</x>
            <y>10</y>
-           <width>91</width>
+           <width>81</width>
            <height>41</height>
           </rect>
          </property>
@@ -1835,9 +1835,9 @@ border:none;</string>
       <widget class="QWidget" name="widget_7" native="true">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>10</x>
          <y>110</y>
-         <width>481</width>
+         <width>401</width>
          <height>471</height>
         </rect>
        </property>
@@ -1851,7 +1851,7 @@ border:none;</string>
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>481</width>
+          <width>401</width>
           <height>491</height>
          </rect>
         </property>
@@ -1878,7 +1878,7 @@ border:none;</string>
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>481</width>
+           <width>401</width>
            <height>491</height>
           </rect>
          </property>
@@ -1976,9 +1976,9 @@ QCalendarWidget QWidget#qt_calendar_weeknumber {
       <widget class="QWidget" name="widget_8" native="true">
        <property name="geometry">
         <rect>
-         <x>520</x>
+         <x>430</x>
          <y>20</y>
-         <width>231</width>
+         <width>321</width>
          <height>561</height>
         </rect>
        </property>
@@ -1997,9 +1997,9 @@ QCalendarWidget QWidget#qt_calendar_weeknumber {
        <widget class="QLabel" name="label_4">
         <property name="geometry">
          <rect>
-          <x>40</x>
+          <x>90</x>
           <y>0</y>
-          <width>161</width>
+          <width>151</width>
           <height>41</height>
          </rect>
         </property>
@@ -2017,11 +2017,14 @@ border:none;
        <widget class="QScrollArea" name="scrollArea">
         <property name="geometry">
          <rect>
-          <x>-1</x>
-          <y>50</y>
-          <width>231</width>
-          <height>511</height>
+          <x>0</x>
+          <y>40</y>
+          <width>321</width>
+          <height>521</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;</string>
         </property>
         <property name="widgetResizable">
          <bool>true</bool>
@@ -2031,24 +2034,9 @@ border:none;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>213</width>
-           <height>493</height>
+           <width>305</width>
+           <height>505</height>
           </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="sizeIncrement">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="layoutDirection">
-          <enum>Qt::LayoutDirection::LeftToRight</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout_10">
           <item row="0" column="0">
