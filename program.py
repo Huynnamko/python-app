@@ -200,21 +200,29 @@ class Home(QMainWindow):
 
         self.btn_add_note = self.findChild(QPushButton, "btn_add_note")
         self.calendarWidget = self.findChild(QCalendarWidget, "calendarWidget")
-        self.btn_add_note.clicked.connect(self.open_note_dialog)
         self.noteListWidget = self.findChild(QListWidget, "noteListWidget")
-        self.notes = {}
         self.user_note_days = self.findChild(QWidget, "user_note_days")
-        self.noteLayout = self.user_note_days.layout()  
+        self.scrollArea = self.findChild(QScrollArea, "scrollArea")  
+        self.noteLayout = self.user_note_days.layout()
         self.noteLayout.setAlignment(Qt.AlignmentFlag.AlignTop)
+        self.btn_add_note.clicked.connect(self.open_note_dialog)
 
     def open_note_dialog(self):
         dialog = NoteDialog(self)
         selected_date = self.calendarWidget.selectedDate()
         dialog.dateTimeEdit.setDate(selected_date)
-
         if dialog.exec() == QDialog.DialogCode.Accepted:
             note_widget = dialog.to_widget()
-            self.noteLayout.addWidget(note_widget)
+            if note_widget:
+                note_widget.setMinimumHeight(80)
+                note_widget.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+                self.noteLayout.addWidget(note_widget)
+                note_widget.show()
+                new_height = self.noteLayout.count() * 90  
+                self.user_note_days.setMinimumHeight(new_height)
+                self.user_note_days.adjustSize()
+                self.scrollArea.widget().adjustSize()
+                self.scrollArea.ensureWidgetVisible(note_widget)
             
     def navMainScreen(self, index):
         self.main_widget.setCurrentIndex(index)

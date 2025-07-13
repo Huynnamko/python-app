@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QDialog, QTextEdit, QDateTimeEdit, QDialogButtonBox, QWidget, QVBoxLayout, QLabel
+from PyQt6.QtWidgets import QDialog, QTextEdit, QDateTimeEdit, QDialogButtonBox, QSizePolicy
 from PyQt6 import uic
 from NoteItem import NoteItem
 
@@ -14,11 +14,17 @@ class NoteDialog(QDialog):
         self.buttonBox.accepted.connect(self.accept)
         self.buttonBox.rejected.connect(self.reject)
 
-        self.setWindowTitle("Thêm ghi chú")
-        self.setMinimumSize(100, 100)
+        self.setWindowTitle("   ")
+        self.setMinimumSize(300, 200)
         self.adjustSize()
 
     def to_widget(self):
-        note_text = self.noteEdit.toPlainText()
+        note_text = self.noteEdit.toPlainText().strip()
         note_date = self.dateTimeEdit.date()
-        return NoteItem(note_text, note_date)
+        if not note_text:
+            return None
+        note_widget = NoteItem(note_text, note_date)
+        note_widget.setMinimumHeight(100)
+        note_widget.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+
+        return note_widget

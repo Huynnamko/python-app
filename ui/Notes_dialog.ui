@@ -51,7 +51,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color:white;</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -79,6 +79,9 @@ color:rgb(255, 255, 255);</string>
      <width>194</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:white;</string>
    </property>
   </widget>
   <widget class="QFrame" name="frame">
