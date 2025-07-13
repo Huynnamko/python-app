@@ -4,8 +4,11 @@ from PyQt6.QtGui import *
 from PyQt6.QtCore import *
 from PyQt6 import uic
 from database import *
+from database_notes import *
 from weather_api import *
 from NoteDialog import NoteDialog
+from NoteItem import NoteItem
+from session_manager import *
 
 class MessageBox():
     def success_box(self, message):
@@ -63,6 +66,7 @@ class Login(QMainWindow):
         user = get_user_by_email_and_password(email, password)
         if user is not None:
             msg.success_box("Đăng nhập thành công")
+            save_session(user["id"])
             self.show_home(user["id"])
             return
 
@@ -159,6 +163,7 @@ class Register(QMainWindow):
         return '.' in s[idx_at+1:]
 
     def show_login(self):
+        clear_session()
         self.login= Login()
         self.login.show()
         self.close()
@@ -193,7 +198,6 @@ class Home(QMainWindow):
         self.txt_city_search.returnPressed.connect(self.search_city)
         self.txt_city_search.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         
-        self.loadAccountInfo()
         self.current_city = "Ho Chi Minh"
         self.setup_weather_widget()
         self.load_today_weather(self.current_city)
@@ -204,24 +208,64 @@ class Home(QMainWindow):
         self.user_note_days = self.findChild(QWidget, "user_note_days")
         self.scrollArea = self.findChild(QScrollArea, "scrollArea")  
         self.noteLayout = self.user_note_days.layout()
+        if self.noteLayout is None:
+            self.noteLayout = QVBoxLayout(self.user_note_days)
+            self.user_note_days.setLayout(self.noteLayout)
         self.noteLayout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.btn_add_note.clicked.connect(self.open_note_dialog)
+
+        self.loadAccountInfo()
+        
 
     def open_note_dialog(self):
         dialog = NoteDialog(self)
         dialog.dateTimeEdit.setDate(self.calendarWidget.selectedDate())
 
         if dialog.exec() == QDialog.DialogCode.Accepted:
-            note_widget = dialog.to_widget()
-            if note_widget:
+            note_text, note_date = dialog.get_note_data()  
+            if note_text:
+                note_date_str = note_date.toString("dd/MM/yyyy HH:mm AP")
+                note_id = add_note(self.user_id, note_date_str, note_text)
+                note_datetime = QDateTime.fromString(note_date_str, "dd/MM/yyyy HH:mm AP")
+                note_widget = NoteItem(note_id, note_text, note_datetime, status="0")
                 note_widget.setMinimumHeight(291)
+                note_widget.update_requested.connect(self.update_note)
+                note_widget.delete_requested.connect(self.delete_note)
+                note_widget.status_changed.connect(update_note_status)
                 self.noteLayout.addWidget(note_widget)
                 self.scrollArea.ensureWidgetVisible(note_widget)
+                    
+    def load_notes(self):
+        notes = get_notes_by_user(self.user_id)
+        for note_id, note_text, note_date, status in notes:
+            note_widget = NoteItem(note_id, note_text, QDate.fromString(note_date, "dd/MM/yyyy"), status)
+            note_widget.setMinimumHeight(291)
+            note_widget.update_requested.connect(self.update_note)
+            note_widget.delete_requested.connect(self.delete_note)
+            self.noteLayout.addWidget(note_widget)
+            self.scrollArea.ensureWidgetVisible(note_widget)
+
+    def update_note(self, note_id, new_text):
+        update_note(note_id, new_text)
+        self.refresh_notes()
+
+    def delete_note(self, note_id):
+        delete_note(note_id)       
+        self.refresh_notes() 
+
+    def refresh_notes(self):
+        while self.noteLayout.count():
+            item = self.noteLayout.takeAt(0)
+            widget = item.widget()
+            if widget:
+                widget.deleteLater()
+        self.load_notes()
             
     def navMainScreen(self, index):
         self.main_widget.setCurrentIndex(index)
 
     def show_login(self):
+        clear_session()
         self.login= Login()
         self.login.show()
         self.close()
@@ -236,6 +280,7 @@ class Home(QMainWindow):
         self.txt_gender.setCurrentIndex(self.txt_gender.findText(self.user.get("gender", "")))
         self.txt_birthday = self.findChild(QDateEdit, "txt_birthday")
         self.txt_birthday.setDate(QDate.fromString(self.user.get("birthday", ""), "d/M/yyyy"))
+        self.load_notes()
 
     def update_avatar(self):
         file,_ = QFileDialog.getOpenFileName(self, "Select image", "", "Images Files(*.png *.jpg *.jpeg *.bmp)")
@@ -354,7 +399,10 @@ class Home(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication([])
-    login = Login()
-    login=Home(1)
-    login.show()
-    app.exec()  
+    user_id = load_session()
+    if user_id:
+        window = Home(user_id)
+    else:
+        window = Login()
+    window.show()
+    app.exec()

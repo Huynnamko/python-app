@@ -58,6 +58,4 @@ def update_user(user_id, name, gender, birthday):
     conn.commit()
     conn.close()
 
-
-
 print(get_user_by_id(1))
